@@ -8,6 +8,10 @@ import java.security.PublicKey;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -22,8 +26,11 @@ public class BaseTest {
 	public static Properties prop;
 	
 	
+	
 	@BeforeSuite
-	public void setUp() throws FileNotFoundException, IOException {
+	public void setUp() throws FileNotFoundException, IOException, Exception {
+		
+		
 		
 		prop=new Properties();
 		prop.load(new FileInputStream(new File(System.getProperty("user.dir")+"\\Config\\confi.properties")));
@@ -60,7 +67,7 @@ public class BaseTest {
 	}
 
 		
-	
+
 	@AfterSuite
 	public void tearDown() {
 		driver.close();

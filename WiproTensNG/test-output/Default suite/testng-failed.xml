@@ -5,9 +5,9 @@
     <classes>
       <class name="com.Test.PageTest.LoginTest">
         <methods>
-          <include name="loginTest"/>
           <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="log" invocation-numbers="0 1"/>
         </methods>
       </class> <!-- com.Test.PageTest.LoginTest -->
     </classes>
